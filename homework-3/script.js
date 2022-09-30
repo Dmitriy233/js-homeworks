@@ -44,8 +44,8 @@ switch (operation) {
 
 let visitorAge = Number(prompt("Введите ваш возраст"));
 if (visitorAge >= 60 && visitorAge <= 80 || visitorAge >= 12 && visitorAge < 18) {
-    let clarification = Number(prompt("Вам разрешили взрослые?\n 1.Да\n 2.Нет"));
-    if (clarification === 1) {
+    let clarification = confirm("Вам разрешили взрослые?");
+    if (clarification) {
         alert("Вход разрешен");
     }
      else {

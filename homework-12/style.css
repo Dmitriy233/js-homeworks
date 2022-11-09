@@ -1,0 +1,29 @@
+.toolTip {
+    position: absolute;
+    height: 23px;
+    width: 200px;
+    background: rgb(203, 180, 180);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    border-radius: 10px;
+
+}
+
+.button {
+    background: rgb(204, 205, 207);
+    border: none;
+    width: 70px;
+    height: 20px;
+    border-radius: 30px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.arrow {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    background:rgb(203, 180, 180);
+    transform: rotate(45deg);
+
+}

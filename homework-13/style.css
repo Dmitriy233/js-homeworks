@@ -1,0 +1,22 @@
+.container{
+    width: 1330px;
+    margin: 0 auto;
+}
+.buttons{
+    display: block;
+    margin: 0 auto;
+}
+.slider {
+ width: 867px;
+ overflow: hidden;
+ margin: 0 auto;
+}
+.slider img{
+    max-width: 867px;
+}
+.wrapper{
+    display: flex;
+position: relative;
+left: 0px;
+}
+

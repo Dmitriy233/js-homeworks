@@ -9,12 +9,13 @@ document.getElementById('btn-next').addEventListener('click', function () {
 
     if (slideIndex === sliderBlock.length - 1) {
         slideIndex = 0;
+       sliderBlock[slideIndex].style.display = 'block';
 
-        return sliderBlock[slideIndex].style.display = 'block';
+    }else{     
+        sliderBlock[slideIndex].style.display = 'none';
+        sliderBlock[++slideIndex].style.display = 'block';
     };
 
-    sliderBlock[slideIndex].style.display = 'none';
-    sliderBlock[++slideIndex].style.display = 'block';
 });
 
 document.getElementById('btn-prev').addEventListener('click', function () {
@@ -23,12 +24,14 @@ document.getElementById('btn-prev').addEventListener('click', function () {
 
     if (slideIndex === 0) {
         slideIndex = sliderBlock.length - 1;
+        sliderBlock[slideIndex].style.display = 'block';
 
-        return sliderBlock[slideIndex].style.display = 'block';
+    }else{
+        sliderBlock[slideIndex].style.display = 'none';
+        sliderBlock[--slideIndex].style.display = 'block';
+
     };
 
-    sliderBlock[slideIndex].style.display = 'none';
-    sliderBlock[--slideIndex].style.display = 'block';
 });
 
 

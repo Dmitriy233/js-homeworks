@@ -13,7 +13,7 @@ const formConfig = [
   {
     element: "select",
     name: "language",
-    label: "Выберите язык программирования",
+    label: "Выберите язык программирования  ",
     options: [
       {
         text: "JavaScript",
@@ -31,92 +31,76 @@ const formConfig = [
   },
 ];
 
-
-// создаем форму и дивы к инпутам
 const form = document.createElement('form');
 const formInputLogin = document.createElement('div');
 const formInputAge = document.createElement('div');
 const formSelect = document.createElement('div');
+let button = document.createElement('button');
+button.innerText = 'Продолжить';
+button.setAttribute('type', 'submit');
 
-// создаем интупы селект и кнопку
-const inputLogin = document.createElement('input');
-const inputAge = document.createElement('input');
-const inputSelect = document.createElement('select');
-const selectOptionJs = document.createElement('option');
-const selectOptionJava = document.createElement('option');
-const selectOptionPython = document.createElement('option');
-const labelLogin = document.createElement('label')
-const labelAge = document.createElement('label')
-const labelSelect = document.createElement('label')
-const buttonSubmit = document.createElement('button');
+const createInputs = () => {
+  formConfig.forEach(config => {
+    if (config.element === 'text') {
+      let inputs = document.createElement('input');
+      let inputsLabel = document.createElement('label');
 
-//  создаем кнопку
-buttonSubmit.innerHTML = 'Продолжить'
-buttonSubmit.setAttribute('type', 'submit')
+      inputs.setAttribute('type', config.element);
+      inputsLabel.setAttribute('for', config.name);
+      inputsLabel.innerHTML = config.label;
+      inputs.setAttribute('id', config.name);
 
+      if (config.name === 'login') {
+        formInputLogin.append(inputsLabel, inputs);
+      };
 
-const addAttributeInForm = () => {
-
-  // создаем варинты селекта
-  selectOptionJs.innerHTML = 'JavaScript'
-  selectOptionJs.setAttribute('value', 'js')
-  selectOptionJava.innerHTML = 'Java'
-  selectOptionJava.setAttribute('value', 'java')
-  selectOptionPython.innerHTML = 'Python'
-  selectOptionPython.setAttribute('value', 'python')
-
-
-  //  добавляем атрибуты
-  formConfig.find((config) => {
-    if (config.name === 'login' && config.element === 'text') {
-      inputLogin.setAttribute('type', config.element);
-      inputLogin.setAttribute('name', config.name);
-      labelLogin.innerHTML = config.label;
-    }
-    if (config.name === 'age' && config.element === 'text') {
-      inputAge.setAttribute('type', config.element);
-      inputAge.setAttribute('name', config.name);
-      labelAge.innerHTML = config.label;
-
-    }
-    if (config.element === 'select') {
-      inputAge.setAttribute('type', config.element);
-      inputAge.setAttribute('name', config.name);
-      labelSelect.innerHTML = config.label;
-
-    }
-  })
-
-  //  апендим в контейнеры
-  inputSelect.append(selectOptionJs, selectOptionJava, selectOptionPython)
-  formSelect.append(labelSelect, inputSelect)
-  formInputLogin.append(labelLogin, inputLogin)
-  formInputAge.append(labelAge, inputAge)
-
-  // апендим в форму
-  form.append(formInputLogin, formInputAge, formSelect, buttonSubmit);
-
-
-
-  return form;
+      if (config.name === 'age') {
+        formInputAge.append(inputsLabel, inputs);
+      };
+    };
+  });
 };
 
-let result = addAttributeInForm();
-document.body.append(result);
+const createSelectAndOption = () => {
+  const findSelectElement = formConfig.find((config) => config.element === 'select');
+  let languageSelect = document.createElement('select');
+  let selectLabel = document.createElement('label');
 
-//  добавляем вывод данных в консоль и убирает перезагрузку при сабмите
+  selectLabel.setAttribute('for', findSelectElement.name);
+  selectLabel.innerHTML = findSelectElement.label;
+  languageSelect.setAttribute('id', findSelectElement.name);
+
+  findSelectElement.options.forEach(option => {
+    option.text;
+    const selectOptionJs = document.createElement('option');
+    selectOptionJs.innerHTML = option.text;
+    selectOptionJs.setAttribute('value', option.value);
+    languageSelect.append(selectOptionJs);
+  })
+
+  formSelect.append(selectLabel, languageSelect);
+};
+
 const handleSubmit = (event) => {
   event.preventDefault();
+  const loginValue = document.getElementById('login');
+  const ageValue = document.getElementById('age');
+  const selectValue = document.getElementById('language');
 
   const formValues = {
-    login: inputLogin.value,
-    age: inputAge.value,
-    language: inputSelect.value,
+    login: loginValue.value,
+    age: ageValue.value,
+    language: selectValue.value,
   };
   console.log(formValues)
-}
+};
 
-result.addEventListener('submit', handleSubmit);
+form.addEventListener('submit', handleSubmit);
+createInputs();
+createSelectAndOption();
+
+form.append(formInputLogin, formInputAge, formSelect, button);
+document.body.append(form);
 
 
 

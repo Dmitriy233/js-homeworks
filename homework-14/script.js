@@ -31,8 +31,6 @@ const formConfig = [
   },
 ];
 
-
-
 const handleSubmit = (event) => {
   event.preventDefault();
   const loginValue = document.getElementById('login');
@@ -46,9 +44,6 @@ const handleSubmit = (event) => {
   };
   console.log(formValues)
 };
-
-
-
 
 function createForm() {
   const form = document.createElement('form');
@@ -95,13 +90,6 @@ function createInputs(formInputLogin, formInputAge) {
   };
   })
 };
-
-
-
-
-
-
-
 
 function createSelectAndOption(formSelect) {
   const findSelectElement = formConfig.find((config) => config.element === 'select');

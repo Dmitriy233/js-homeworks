@@ -46,5 +46,6 @@ button{
     border: 3px solid rebeccapurple;
     color: black;
     border-radius: 10px;
+    cursor: pointer;
 
 }

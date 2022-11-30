@@ -1,3 +1,6 @@
+const timerOutput = document.getElementById('timer');
+const startBtn = document.getElementById('btnStart');
+const stopBtn = document.getElementById('btnStop');
 
 let intervalId = null;
 let timerInput = Number(prompt('введите время в секундах'));
@@ -26,7 +29,7 @@ const startTimer = (delay) => {
 
                 if (timerInput === -1) {
                     clearInterval(intervalId)
-                    startTimer(5000).then(() => {
+                    startTimer(30000).then(() => {
                         console.log("Timer end!");
                     });
                 }
@@ -47,15 +50,10 @@ const stop = () => {
     intervalId = null;
 }
 
-const timerOutput = document.createElement('div');
-const startBtn = document.createElement('button');
-const stopBtn = document.createElement('button');
 
-startBtn.innerHTML = 'Start';
-stopBtn.innerHTML = 'Stop';
 
 startBtn.addEventListener('click', start)
 stopBtn.addEventListener("click", stop)
 
-document.body.append(startBtn, stopBtn, timerOutput)
+
 

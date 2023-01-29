@@ -1,0 +1,279 @@
+body {
+    background-image: url(./img/body_backgroung.jpg);
+    background-size: cover;
+}
+
+
+
+.title {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+}
+
+.logout_block {
+    display: flex;
+    align-items: center;
+}
+
+.logout {
+    display: none;
+    width: 200px;
+    height: 30px;
+    font-size: larger;
+    margin-right: 30px;
+    text-align: center;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    margin: 0 0 0 20px;
+
+}
+
+.user_name {
+    display: none;
+    color: white;
+    /* font-family: 'Bebas Neue'; */
+    font-size: 35px;
+    font-weight: 700;
+
+}
+
+.title_page {
+    color: white;
+    font-family: 'Bebas Neue';
+    font-size: 50px;
+    font-weight: 900;
+    padding-top: 30px;
+    margin-bottom: 100px;
+}
+
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.form_container {
+    display: block;
+    max-width: 500px;
+    max-height: 345px;
+    margin: 0 auto;
+    text-align: center;
+    border: 1px solid #676768;
+    border-radius: 30px;
+    margin-top: 50px;
+    background-color: #313132;
+    padding-bottom: 20px;
+}
+
+.inputs {
+    display: block;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+    height: 30px;
+    outline: none;
+    border-radius: 10px;
+    border: none;
+    font-weight: 600;
+    font-size: larger;
+    cursor: pointer;
+    padding-left: 10px;
+}
+
+.input:not(:last-of-type) {
+    margin-bottom: 30px;
+}
+
+.btn {
+    padding-top: 10px;
+}
+
+.button_authorization {
+    background: none;
+    border: none;
+    font-family: 'Bebas Neue';
+    font-size: 25px;
+    color: white;
+    outline: white;
+
+}
+
+.button_authorization:hover {
+    text-decoration: underline;
+    color: #B30398;
+    cursor: pointer;
+}
+
+.form_title {
+    color: white;
+    font-family: 'Bebas Neue';
+    font-size: 40px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    line-height: 30px;
+}
+
+.form {
+    padding: 20px 50px 0;
+}
+
+.button {
+    background-color: #B30398;
+    font-family: 'Bebas Neue';
+    line-height: 3px;
+    color: white;
+    border: none;
+    border-radius: 3px;
+}
+
+.input_name {
+    display: block;
+}
+
+.button_submit {
+    width: 200px;
+    height: 30px;
+    font-size: larger;
+    margin-right: 30px;
+    text-align: center;
+    margin-bottom: 30px;
+    border-radius: 10px;
+}
+
+.button_submit:hover {
+    background-color: #90047b;
+    cursor: pointer;
+}
+
+.form_task {
+    display: flex;
+    flex-direction: column;
+    width: 390px;
+    height: 168px;
+    color: white;
+    padding: 30px;
+    border: 1px solid #676768;
+    border-radius: 30px;
+    margin-top: 50px;
+    background-color: #313132;
+    padding-bottom: 20px;
+}
+
+
+.main_UI {
+    display: flex;
+    /* align-items: center; */
+    /* margin: 0 auto; */
+    justify-content: space-around;
+}
+
+.card_container {
+    /* max-height: 345px;
+    max-width: 500px; */
+    color: white;
+    padding: 30px;
+    border: 1px solid #676768;
+    border-radius: 30px;
+    margin-top: 50px;
+    background-color: #313132;
+    padding-bottom: 20px;
+}
+
+.main_page {
+    display: none;
+}
+
+.task__card {
+    position: relative;
+    height: 160px;
+    width: 300px;
+    color: white;
+    padding: 30px;
+    border: 1px solid #676768;
+    border-radius: 30px;
+    margin-top: 50px;
+    background-color: #313132;
+    padding-bottom: 20px;
+    hyphens: auto;
+
+}
+
+.task__card-title {
+    color: white;
+    /* font-family: 'Bebas Neue'; */
+    font-size: 30px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    line-height: 30px;
+}
+
+.task__tracker {
+    display: flex;
+    margin: 10px 0;
+    align-items: center;
+}
+
+.task__btn-play {
+    width: 30px;
+    height: 30px;
+    background: green;
+    border: none;
+    margin-right: 5px;
+    color: white;
+    border-radius: 50%;
+
+}
+
+.pause {
+    background: red;
+    color: white;
+    border-radius: 50%;
+
+}
+
+.task__card.done {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.task__btn-mark {
+    width: 105px;
+    height: 22px;
+    background: #90047b;
+    border: none;
+    margin-top: 10px;
+    border-radius: 10px;
+    color: white;
+}
+
+.task__btn-done {
+    width: 105px;
+    height: 22px;
+    background: #90047b;
+    border: none;
+    margin-top: 10px;
+    border-radius: 10px;
+    color: white;
+}
+
+.task__btn-delete {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    color: white;
+    background: #90047b;
+    border: none;
+}
+
+.form_task-submit {
+    height: 30px;
+    margin-top: 15px;
+    font-size: x-large;
+    border-radius: 5px;
+}

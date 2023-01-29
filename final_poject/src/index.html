@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+</head>
+
+<body>
+    <header>
+        <div class="container title">
+            <h1 class="title_page">Your Tasks</h1>
+            <div class="logout_block">
+                <p class="user_name"></p>
+                <button id="btnLogout" class="button logout" type="submit">LOGOUT</button>
+
+            </div>
+        </div>
+    </header>
+    <section class="container form_container">
+        <!-- <div class="btn"> -->
+            <button id="changeAuthorization"  class=" button_authorization">Login</button>
+        <!-- </div> -->
+        <form id="formAuthorization" class="register form">
+            <h3 class="form_title">Register</h3>
+            <div class="inputs">
+                <input class="input input_login" type="email" placeholder="Email" required>
+                <span class="error_email" style="color: red;"></span>
+                <input class="input input_name" type="text" placeholder="Name" >
+                <!-- <span class="error"></span> -->
+                <input class="input input_password" type="password" placeholder="Password" required>
+                <span class="error_password" style="color: red;"></span>
+            </div>
+            <button id="buttonSubmit" class="button button_submit" type="submit">Submit</button>
+        </form>
+    </section>
+    <section class="main_page">
+        <div class="container main_UI">
+            <form class="form_task" id="formTask" action="">
+                <span>Name task</span>
+                <input id="taskName" class="input" type="text" required>
+                <span>Description task</span>
+                <input id="taskDescription" class="input" type="text">
+                <button class="button form_task-submit">Create Task</button>
+            </form>
+            <div id="taskContainer"></div>
+        </div>
+    </section>
+</body>
+
+</html>
